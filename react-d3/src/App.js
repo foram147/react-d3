@@ -1,5 +1,4 @@
 import "./App.css";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Books from "../src/data/fantasy.json";
@@ -8,9 +7,9 @@ import BookList from "./component/BookList";
 import SingleBook from "./component/SingleBook";
 import Warning from "./component/Warning";
 import MyBadge from './component/MyBadge'
+import FilterBook from "./Component/FilterBook";
 
 function App() {
-  console.log("Singlebook: ", SingleBook);
   return (
     <div className="App">
       <Container>
@@ -19,6 +18,10 @@ function App() {
         <SingleBook book={Books[0]} />
       </Container>
       <BookList Books={Books} />
+      <Warning AlertMessage="Hello" />
+      <div>
+        <FilterBook />
+      </div>
     </div>
   );
 }
