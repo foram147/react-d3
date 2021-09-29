@@ -1,7 +1,8 @@
 import React from "react";
 import SingleBook from "./SingleBook";
 import { Col, Row } from "react-bootstrap";
-import category from "../data/fantasy.json";
+import category from "../data/fantasy.json"
+
 class BookList extends React.Component {
   state = {
     selected: false,
