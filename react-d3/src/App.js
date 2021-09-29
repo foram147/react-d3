@@ -1,13 +1,20 @@
 import "./App.css";
-import React from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 import Books from "../src/data/fantasy.json";
 import { Container } from "react-bootstrap";
+import BookList from "./Component/BookList";
+import SingleBook from "./Component/SingleBook";
 
 function App() {
+  console.log("Singlebook: ", SingleBook);
   return (
-    <Container>
-      <div></div>
-    </Container>
+    <div className="App">
+      <Container>
+        <SingleBook book={Books[0]} />
+      </Container>
+      <BookList Books={Books} />
+    </div>
   );
 }
 
