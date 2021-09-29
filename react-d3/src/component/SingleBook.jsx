@@ -12,7 +12,7 @@ class SingleBook extends Component {
           this.props.selected === this.props.book.asin ? "bg-dark" : ""
         }
       >
-        <Card className="h-100">
+        <Card className="h-80">
           <Card.Img variant="top" src={this.props.book.img} />
           <Card.Body>
             <Card.Title>{this.props.book.title}</Card.Title>
