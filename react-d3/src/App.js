@@ -7,7 +7,7 @@ import BookList from "./component/BookList";
 import SingleBook from "./component/SingleBook";
 import Warning from "./component/Warning";
 import MyBadge from './component/MyBadge'
-import FilterBook from "./Component/FilterBook";
+import FilterBook from "./component/FilterBook";
 
 function App() {
   return (
