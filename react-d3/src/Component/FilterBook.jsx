@@ -29,7 +29,7 @@ class FilterBook extends Component {
       <>
         <input
           type="text"
-          onKeyUp={(e) => {
+          onChange={(e) => {
             this.search(e);
           }}
         />
