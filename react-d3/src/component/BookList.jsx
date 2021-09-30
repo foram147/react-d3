@@ -1,28 +1,40 @@
 import React from "react";
 import SingleBook from "./SingleBook";
-import { Col, Row } from "react-bootstrap";
-import category from "../data/fantasy.json";
+import { Col, Container, Form, Row } from "react-bootstrap";
+
 class BookList extends React.Component {
   state = {
-    selected: false,
+    searchQuery: "",
   };
+
   render() {
     return (
-      <Row key={category[0].category}>
-        <Col xs="12">
-          <h1>{category[0].category}</h1>
-        </Col>
-        {category.map((book) => (
-          <SingleBook
-            setSelected={(asin) => {
-              this.setState({ selected: asin });
-              console.log({ book });
-            }}
-            selected={this.state.selected}
-            book={book}
-          />
-        ))}
-      </Row>
+      <Container>
+        <Row>
+          <Col>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Search</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Search here"
+                value={this.state.searchQuery}
+                onChange={(e) => this.setState({ searchQuery: e.target.value })}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row>
+          {this.props.books
+            .filter((b) =>
+              b.title.toLowerCase().includes(this.state.searchQuery)
+            )
+            .map((b) => (
+              <Col xs={3}>
+                <SingleBook book={b} />
+              </Col>
+            ))}
+        </Row>
+      </Container>
     );
   }
 }

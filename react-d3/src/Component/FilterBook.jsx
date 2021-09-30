@@ -29,8 +29,8 @@ class FilterBook extends Component {
       <>
         <input
           type="text"
-          onChange={(e) => {
-            this.search(e);
+          onKeyUp={(e) => {
+            this.state.search(e);
           }}
         />
         {this.state.filteredBooks.map((category) => {
