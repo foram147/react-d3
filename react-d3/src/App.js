@@ -1,6 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+
 import Warning from "./Component/Warning";
 //import FilterBook from "./Component/FilterBook";
 import MyBadge from "./Component/MyBadge";
@@ -12,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <Warning AlertMessage="Hello" />
-
       <MyBadge text="NEW!!" color="info" />
       <SingleBook book={dataBooks[0]}></SingleBook>
       <BookList books={dataBooks} />
